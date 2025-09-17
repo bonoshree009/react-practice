@@ -1,6 +1,8 @@
 
 import './App.css'
 import Todo from './todo';
+import Allactor from './array';
+import Obj from './obj';
 
 function App() {
 
@@ -14,15 +16,55 @@ function App() {
         <Developer name="sarkar" tech="rdux" ></Developer>
         <Pronami name ="eva" event= "durga puja" amount = "2000"></Pronami>
         <Pronami name ="omi" event= "durga puja"></Pronami> */}
-        <Todo course="js" duration ="200 hours"></Todo>
-          <Todo course="html"></Todo>
-
+        {/* <Todo course="js" duration ="200 hours"></Todo>
+          <Todo course="html"></Todo> */}
+          {/* <Ternary name="jahid" time = "209" isdone={true}></Ternary>
+          <Ternary name="suraj" isdone={false}></Ternary> */}
+          <Favactor></Favactor>
+          <Object></Object>
         
       
     </>
   )
 }
+function Object(){
+  const objects = [
+    {id:1,name:"kakri",age:25},
+    {id:2,name:"bakri",age:45},
+    {id:3,name:"makri",age:35},
+    {id:4,name:"fakri",age:25}
+  ]
+  return (
+  <div> {
+    objects.map(obj => <Obj obj={obj} key={obj.id}></Obj>)
+  } </div>)
+}
 
+ function Favactor(){
+  const actors =["rohit","sid","varun","aditya","srk","rajkuar"]
+
+   return (
+    <div> {actors.map(actor => <Allactor actor ={actor}></Allactor>)}</div>
+   )
+ }
+
+ function Ternary({name,time = 0,isdone}){
+   let displaytime = time > 200? time : "need more practice"
+    if(isdone){
+         return (
+          <div><p>name :{name}</p>
+          <p>coding time : {displaytime}</p>
+          </div>
+         )
+    }
+  return (
+    <div>
+      <p>name :{name}</p>
+      <p>coding time : {time}</p>
+      </div>
+        
+         )
+ }
 
 function Pronami({ name,event, amount=200}){
 
@@ -36,7 +78,6 @@ function Pronami({ name,event, amount=200}){
 
   )
 }
-
 
 function Person(props){
   console.log(props)
