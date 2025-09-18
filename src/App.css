@@ -48,3 +48,10 @@
   margin: 10px;
 
 }
+.event{
+  background-color: rgba(38, 24, 59, 0.99);
+  color: rgb(154, 16, 16);
+  border: 2px solid rgba(98, 85, 240, 0.971);
+  padding: 20px;
+  margin: 10px;
+}

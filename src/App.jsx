@@ -6,6 +6,18 @@ import Obj from './obj';
 
 function App() {
 
+
+// Event handler
+ function Eventhandlerone(){
+  alert("clicked")
+ }
+ function Eventhandlerfour(num){
+     const number =num + 5
+     alert(number)
+ }
+
+
+
   return (
     <>
       <h1>Vite + React</h1>
@@ -20,8 +32,13 @@ function App() {
           <Todo course="html"></Todo> */}
           {/* <Ternary name="jahid" time = "209" isdone={true}></Ternary>
           <Ternary name="suraj" isdone={false}></Ternary> */}
-          <Favactor></Favactor>
-          <Object></Object>
+          {/* <Favactor></Favactor>
+          <Object></Object> */}
+          <button className='event' onClick={Eventhandlerone}>Event-1</button>
+          <button className='event' onClick={function eventhandlertwo(){alert("clicked button two")}}>Event-2</button>
+          <button className='event' onClick={() => {alert("clicked button three")}}>Event-3</button>
+
+          <button className='event' onClick={()=>Eventhandlerfour(7)}>Event-4</button>
         
       
     </>
