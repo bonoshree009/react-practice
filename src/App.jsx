@@ -3,6 +3,7 @@ import './App.css'
 import Todo from './todo';
 import Allactor from './array';
 import Obj from './obj';
+import { useState } from 'react';
 
 function App() {
 
@@ -14,6 +15,20 @@ function App() {
  function Eventhandlerfour(num){
      const number =num + 5
      alert(number)
+ }
+
+ function Count(){
+
+const [count , setcount]= useState(0)
+const addhandle =()=>{
+    let newcount = count +1
+    return setcount(newcount)
+}
+
+  return <div className='state'>
+    <h1>count : {count}</h1>
+    <button className='event' onClick={addhandle}>press</button>
+  </div>
  }
 
 
@@ -39,6 +54,7 @@ function App() {
           <button className='event' onClick={() => {alert("clicked button three")}}>Event-3</button>
 
           <button className='event' onClick={()=>Eventhandlerfour(7)}>Event-4</button>
+        <Count></Count>
         
       
     </>
