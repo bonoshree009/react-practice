@@ -4,6 +4,7 @@ import Todo from './todo';
 import Allactor from './array';
 import Obj from './obj';
 import { useState } from 'react';
+import { Boller } from './boller';
 
 function App() {
 
@@ -55,6 +56,7 @@ const addhandle =()=>{
 
           <button className='event' onClick={()=>Eventhandlerfour(7)}>Event-4</button>
         <Count></Count>
+        <Boller></Boller>
         
       
     </>
