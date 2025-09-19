@@ -1,14 +1,21 @@
-
 import './App.css'
 import Todo from './todo';
 import Allactor from './array';
 import Obj from './obj';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { Boller } from './boller';
+import Users from './api';
+import Async from './async';
 
+// fetch
+const apiusers = fetch("https://jsonplaceholder.typicode.com/users").then(res => res.json())
+ const allfetch = async () => {
+  const res =  await fetch("https://jsonplaceholder.typicode.com/todos");
+    return res.json();
+ }
 function App() {
 
-
+const asyncfetch = allfetch()
 // Event handler
  function Eventhandlerone(){
   alert("clicked")
@@ -32,8 +39,6 @@ const addhandle =()=>{
   </div>
  }
 
-
-
   return (
     <>
       <h1>Vite + React</h1>
@@ -53,10 +58,16 @@ const addhandle =()=>{
           <button className='event' onClick={Eventhandlerone}>Event-1</button>
           <button className='event' onClick={function eventhandlertwo(){alert("clicked button two")}}>Event-2</button>
           <button className='event' onClick={() => {alert("clicked button three")}}>Event-3</button>
-
           <button className='event' onClick={()=>Eventhandlerfour(7)}>Event-4</button>
-        <Count></Count>
-        <Boller></Boller>
+        {/* <Count></Count>
+        <Boller></Boller> */}
+        {/* <Suspense fallback={ <h3>Loding...</h3>}>
+             <Users apiusers ={apiusers}></Users>
+        </Suspense> */}
+
+         <Suspense fallback={ <h1>Loding...</h1>}>
+             <Async asyncfetch = {asyncfetch}></Async>
+        </Suspense>
         
       
     </>

@@ -2,8 +2,8 @@ import { useState } from "react"
 
 export function Boller(){
    
-    const [run , setrun] = useState(0)
-    if(run == 50){
+    let [run , setrun] = useState(0)
+    if(run > 50){
    
         alert("congrats you get half century")
     }
